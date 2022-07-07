@@ -1,5 +1,6 @@
 <?php
 
+use App\Pizza;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,10 +14,19 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// Route::get('/', function () {
+//     return view('guest.welcome');
+// })->name('welcome');
+
 Route::get('/', function () {
-    // $pizze = config('pizze');
-    return view('guest.welcome');
+    return view('guest.vue.pizze');
 })->name('welcome');
+
+Route::get('/pizzeapi-3892', function() {
+    $pizze = Pizza::all();
+    return $pizze->toJson(JSON_PRETTY_PRINT);
+});
+
 
 Auth::routes();
 
