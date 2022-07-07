@@ -14,8 +14,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
+    // $pizze = config('pizze');
     return view('guest.welcome');
-});
+})->name('welcome');
 
 Auth::routes();
 
@@ -25,4 +26,5 @@ Route::middleware('auth')
                     ->prefix('admin')
                     ->group(function(){
                         Route::get('/', 'PageController@index')->name('index');
+                        // Route::resource('posts', 'PostController');
                     });
