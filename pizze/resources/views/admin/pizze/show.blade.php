@@ -11,6 +11,7 @@
               <p class="card-text"> Vegana: {{$pizza->is_veggie ? 'Si': 'No'}}</p>
               <p class="card-text"> Descrizione: {{$pizza->description}}</p>
               <a href="{{route('admin.pizze.edit', $pizza)}}" class="btn btn-primary">Edit</a>
+              <a href="{{route('admin.pizze.index')}}" class="btn btn-primary">Lista</a>
             </div>
           </div>
 
