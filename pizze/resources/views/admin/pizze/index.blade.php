@@ -27,10 +27,10 @@
                         <td>{{ $pizza->popularity }}</td>
                         <td>{{ $pizza->is_veggie == true ? 'Sì' : 'No' }}</td>
                         <td>
-                            <a href="" class="btn btn-primary">
+                            <a href="{{route('admin.pizze.show', $pizza)}}" class="btn btn-primary">
                                 Show
                             </a>
-                            <a href="" class="btn btn-secondary">
+                            <a href="{{route('admin.pizze.edit ')}}" class="btn btn-secondary">
                                 Edit
                             </a>
                             <form action="{{ route('admin.pizze.destroy', $pizza) }}" method="POST" class="d-inline">

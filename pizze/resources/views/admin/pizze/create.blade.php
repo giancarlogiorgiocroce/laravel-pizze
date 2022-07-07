@@ -27,7 +27,7 @@
               </div>
               <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">Ingredienti</label>
-                <input type="email" value="{{old('ingredients')}}" name="ingredients" class="form-control  @error('ingredients') is-invalid @enderror"  >
+                <input type="text" value="{{old('ingredients')}}" name="ingredients" class="form-control  @error('ingredients') is-invalid @enderror"  >
                 @error('ingredients')
                   <p class="text-danger"> {{$message}} </p>
                 @enderror

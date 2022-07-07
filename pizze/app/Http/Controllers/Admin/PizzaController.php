@@ -39,7 +39,17 @@ class PizzaController extends Controller
     public function store(PizzaRequest $request)
     {
 
-        return redirect()->route('admin.index');
+        $pizza = $request->all();
+        $new_pizza = new Pizza;
+        $new_pizza->fill($pizza);
+        $new_pizza->slug = $new_pizza->generateSlug($new_pizza->name);
+        if($new_pizza->is_veggie == "Sì"){
+            $new_pizza->is_veggie = true;
+        }else{
+            $new_pizza->is_veggie = false;
+        }
+        $new_pizza->save();
+        return redirect()->route('admin.pizze.index');
 
     }
 
@@ -51,7 +61,8 @@ class PizzaController extends Controller
      */
     public function show($id)
     {
-        return view('admin.pizze.show');
+        $pizza = Pizza::find($id);
+        return view('admin.pizze.show', compact('pizza'));
     }
 
     /**

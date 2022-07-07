@@ -2,6 +2,17 @@
 
 @section('content')
     <div class="container">
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+              <h5 class="card-title">{{$pizza->name}}</h5>
+              <p class="card-text"> Prezzo: {{$pizza->price}}</p>
+              <p class="card-text"> Popolarità: {{$pizza->popularity}}</p>
+              <p class="card-text"> Ingredienti: {{$pizza->ingredients}}</p>
+              <p class="card-text"> Vegana: {{$pizza->is_veggie ? 'Si': 'No'}}</p>
+              <p class="card-text"> Descrizione: {{$pizza->description}}</p>
+              <a href="{{route('admin.pizze.edit ')}}" class="btn btn-primary">Edit</a>
+            </div>
+          </div>
 
     </div>
 @endsection

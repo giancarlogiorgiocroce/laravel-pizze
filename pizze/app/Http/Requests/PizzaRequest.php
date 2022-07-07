@@ -25,25 +25,35 @@ class PizzaRequest extends FormRequest
     {
         return [
             'name' => "required |max: 80 | min: 5",
-            'price' => "required | numeric | max: 8 | min: 3",
-            'popularity' => "required | numeric | max: 2 | min: 1",
+            'price' => "required | numeric ",
+            'popularity' => "required | numeric ",
             'ingredients' => "required | max: 255 | min: 5",
             'is_veggie' => "required |",
-            'description' => "required |max: 80 | min: 5",
+            'description' => "required |max: 255 | min: 5",
 
         ];
     }
 
-    // public function message()
-    // {
-    //     return [
-    //         'name.required' => "required |max: 80 | min: 5",
-    //         // 'price' => "required |max: 80 | min: 5",
-    //         // 'popularity' => "required | max: 80 | min: 5",
-    //         // 'ingredients' => "required | max: 80 | min: 5",
-    //         // 'is_veggie' => "required |",
-    //         // 'description' => "required |max: 80 | min: 5",
-
-    //     ];
-    // }
+    public function messages()
+    {
+        return [
+            'name.required' => "Obbligatorio",
+            'name.max' => "Massimo :max caratteri",
+            'name.min' => "Minimo :min caraetteri",
+            'price.required' => "Obbligatorio",
+            'price.numeric' => "Deve essere un numero",
+            // 'price.max' => "Massimo :max caratteri",
+            // 'price.min' => "Minimo :min caraetteri",
+            'popularity.required' => "Obbligatorio",
+            // 'popularity.max' => "Massimo :max caratteri",
+            // 'popularity.min' => "Minimo :min caraetteri",
+            'ingredients.required' => "Obbligatorio",
+            'ingredients.max' => "Massimo :max caratteri",
+            'ingredients.min' => "Minimo :min caraetteri",
+            'is_veggie.required' => "Obbligatorio",
+            'description.required' => "Obbligatorio",
+            'description.max' => "Massimo :max caratteri",
+            'description.min' => "Minimo :min caraetteri",
+        ];
+    }
 }
