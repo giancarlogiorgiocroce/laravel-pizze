@@ -1,9 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
-use App\Pizza;
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Pizza;
 
 class PizzaController extends Controller
 {
@@ -14,7 +15,8 @@ class PizzaController extends Controller
      */
     public function index()
     {
-        //
+        $pizze = Pizza::orderBy('id', 'desc')->paginate(5);
+        return view('admin.pizze.index', compact('pizze'));
     }
 
     /**
@@ -41,10 +43,10 @@ class PizzaController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Pizza  $pizza
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Pizza $pizza)
+    public function show($id)
     {
         //
     }
@@ -52,10 +54,10 @@ class PizzaController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Pizza  $pizza
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Pizza $pizza)
+    public function edit($id)
     {
         //
     }
@@ -64,10 +66,10 @@ class PizzaController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Pizza  $pizza
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Pizza $pizza)
+    public function update(Request $request, $id)
     {
         //
     }
@@ -75,10 +77,10 @@ class PizzaController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Pizza  $pizza
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Pizza $pizza)
+    public function destroy($id)
     {
         //
     }
