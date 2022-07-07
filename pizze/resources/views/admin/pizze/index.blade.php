@@ -1,7 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container">
+<div class="container">
+        <div class="d-flex align-items-center justify-content-between my-5">
+            <h1>Lista pizze</h1>
+            <a href="{{ route('admin.pizze.create')}}" class="btn btn-success">Crea</a>
+        </div>
         <table class="table">
             <thead>
             <tr>
@@ -29,7 +33,7 @@
                             <a href="" class="btn btn-secondary">
                                 Edit
                             </a>
-                            <form action="{{  }}" method="POST" class="d-inline">
+                            <form action="{{ route('admin.pizze.destroy', $pizza) }}" method="POST" class="d-inline">
                                 @csrf
                                 @method('DELETE')
                                 <input type="submit" value="Delete" class="btn btn-danger">

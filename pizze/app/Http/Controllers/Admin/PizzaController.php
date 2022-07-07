@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\PizzaRequest;
 use Illuminate\Http\Request;
 use App\Pizza;
 
@@ -26,7 +27,7 @@ class PizzaController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.pizze.create');
     }
 
     /**
@@ -35,9 +36,11 @@ class PizzaController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(PizzaRequest $request)
     {
-        //
+
+        return redirect()->route('admin.index');
+
     }
 
     /**
@@ -48,7 +51,7 @@ class PizzaController extends Controller
      */
     public function show($id)
     {
-        //
+        return view('admin.pizze.show');
     }
 
     /**
@@ -59,7 +62,7 @@ class PizzaController extends Controller
      */
     public function edit($id)
     {
-        //
+        return view('admin.pizze.edit');
     }
 
     /**
@@ -82,6 +85,5 @@ class PizzaController extends Controller
      */
     public function destroy($id)
     {
-        //
     }
 }
