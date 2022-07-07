@@ -10,7 +10,7 @@
               <p class="card-text"> Ingredienti: {{$pizza->ingredients}}</p>
               <p class="card-text"> Vegana: {{$pizza->is_veggie ? 'Si': 'No'}}</p>
               <p class="card-text"> Descrizione: {{$pizza->description}}</p>
-              <a href="{{route('admin.pizze.edit ')}}" class="btn btn-primary">Edit</a>
+              <a href="{{route('admin.pizze.edit', $pizza)}}" class="btn btn-primary">Edit</a>
             </div>
           </div>
 

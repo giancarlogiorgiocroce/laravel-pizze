@@ -30,7 +30,7 @@
                             <a href="{{route('admin.pizze.show', $pizza)}}" class="btn btn-primary">
                                 Show
                             </a>
-                            <a href="{{route('admin.pizze.edit ')}}" class="btn btn-secondary">
+                            <a href="{{route('admin.pizze.edit', $pizza)}}" class="btn btn-secondary">
                                 Edit
                             </a>
                             <form action="{{ route('admin.pizze.destroy', $pizza) }}" method="POST" class="d-inline">
