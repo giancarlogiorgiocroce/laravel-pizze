@@ -115,7 +115,9 @@ class PizzaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Pizza $pizze)
     {
+        $pizze->delete();
+        return redirect()->route('admin.pizze.index')->with('cancellato',"Cancellazione avvenuta con successo! Parola di Giancarlo");
     }
 }

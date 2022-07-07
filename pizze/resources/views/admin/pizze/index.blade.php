@@ -2,6 +2,12 @@
 
 @section('content')
 <div class="container">
+        @if(session('cancellato'))
+            <div class=" my-2 alert alert-success" role="alert">
+                {{ session('cancellato') }}
+            </div>
+        @endif
+
         <div class="d-flex align-items-center justify-content-between my-5">
             <h1>Lista pizze</h1>
             <a href="{{ route('admin.pizze.create')}}" class="btn btn-success">Crea</a>
